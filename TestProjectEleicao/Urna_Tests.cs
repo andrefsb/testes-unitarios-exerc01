@@ -45,9 +45,10 @@ namespace TestProjectEleicao
 
 
         [Theory]
-        [InlineData("João", true)]
-        [InlineData("Maria", false)]
-        public void ValidateVoteNameCandidateEntry(string name, bool expectedResult)
+        [InlineData("João", true)] //Validação de candidato cadastrado
+        [InlineData("Maria", false)] //Validação de candidato não cadastrado
+        [InlineData("Teste", false)] //Validação de candidato não cadastrado
+        public void ValidateCandidateNameVoteEntry(string name, bool expectedResult)
         {
             Urna urna = new Urna();
             urna.CadastrarCandidato("João");
